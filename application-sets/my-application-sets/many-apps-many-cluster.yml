@@ -19,7 +19,12 @@ spec:
     metadata:
       name: '{{path.basename}}-{{name}}'
     spec:
-      syncPolicy: auto-sync/self-heal/createNamespace
+      spec:
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true 
       project: default
       source:
         repoURL: https://github.com/codefresh-contrib/gitops-cert-level-2-examples.git
