@@ -24,6 +24,5 @@ spec:
 
   ignoreDifferences:
   - group: apps
-    jsonPointers:
-    - /metadata/annotations/creation
-    - /data/my-password
+    jqPathExpressions:
+    - .metadata.annotations.creation | select(.metadata.name = "simple-deployment")
