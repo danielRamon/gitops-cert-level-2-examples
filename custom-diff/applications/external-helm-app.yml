@@ -21,4 +21,10 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
+  spec:
+    ignoreDifferences:
+    - group: *
+      kind: Secret
+      jsonPointers:
+      - /data/my-password
    
