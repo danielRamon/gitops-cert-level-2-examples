@@ -24,5 +24,6 @@ spec:
 
   ignoreDifferences:
   - group: apps
+    kind: *
     jqPathExpressions:
     - .metadata.annotations.creation | select(.metadata.name = "simple-deployment")
